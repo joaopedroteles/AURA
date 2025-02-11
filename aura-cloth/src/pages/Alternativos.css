@@ -1,0 +1,29 @@
+.alternativos-container {
+    padding: 20px;
+    background: url('C:/Users/joaop/OneDrive/Área de Trabalho/AURA/aura-cloth/public/images/backproduto.png') no-repeat center center fixed;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+  }
+  
+  .produtos-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .produto-item {
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .produto-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }

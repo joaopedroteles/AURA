@@ -1,0 +1,119 @@
+.profile-container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: url('C:\Users\joaop\OneDrive\Área de Trabalho\AURA\aura-cloth\public\images\background2.png') no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  height: 1000px;
+}
+
+.profile-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-form label {
+  font-weight: bold;
+  color: #555;
+}
+
+.profile-form input,
+.profile-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.profile-form button {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.profile-form button:hover {
+  background: #33333376;
+}
+
+
+.orders-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.orders-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #333;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.order-item {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  text-align: center;
+  background-color: #36689f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  text-align: center;
+  background-color: #0056b3;
+}
+
+.admin-access {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.admin-access button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.admin-access button:hover {
+  background-color: #218838;
+}
+
+.message {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+}

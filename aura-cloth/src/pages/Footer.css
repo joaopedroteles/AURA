@@ -1,0 +1,62 @@
+.footer-container {
+  width: 100%;
+  /*background-color: rgb(255, 255, 255);*/
+  padding: 0px 0;
+  text-align: center;
+  backdrop-filter: blur(0px);
+  box-sizing: border-box;
+  position: relative;
+  margin-top: 00px;
+}
+
+.footer-instagram {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 20px;
+}
+
+.footer-instagram p {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.instagram-banner {
+  width: 100%;
+  max-width: 1500px;
+  margin: 20px 0;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  background-color: #20003a;
+  color: rgb(255, 255, 255);
+}
+
+.footer-column {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footer-column h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.footer-column p {
+  margin: 5px 0;
+}
+
+.footer-bottom-bar {
+  width: 100%;
+  background-color: #120021 ;
+  color: hwb(0 100% 0%);
+  padding: 10px 0;
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 0px; /* Adiciona margem superior */
+  /*position: absolute;
+  bottom: 0;
+  left: 0;*/
+}

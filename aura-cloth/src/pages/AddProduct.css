@@ -1,0 +1,61 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .add-product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .add-product-title {
+    margin-top: 20px;
+    font-size: 2em;
+  }
+  
+  .add-product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .add-product-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-product-form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .add-product-form-group input,
+  .add-product-form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .add-product-message {
+    color: green;
+    font-size: 1em;
+  }
+  
+  .add-product-button {
+    padding: 10px 20px;
+    background-color: #02a9f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .add-product-button:hover {
+    background-color: #0b5ddb;
+  }
