@@ -128,3 +128,48 @@
   padding: 8px;
   border-radius: 5px;
 }
+
+/*------------------------------------------------------
+
+/* Admin.css */
+
+.orders-list {
+  margin-bottom: 20px;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th,
+.orders-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.orders-table tr.selected {
+  background-color: #f0f0f0;
+}
+
+.order-details {
+  margin-top: 20px;
+}
+
+.order-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.order-item-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.order-item-card img {
+  max-width: 100%;
+  height: auto;
+}

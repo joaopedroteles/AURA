@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Cart = () => {
-  const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
+  const { cartItems, removeFromCart, updateQuantity, updateSize } = useContext(CartContext);
   const [coupon, setCoupon] = useState('');
   const [discount, setDiscount] = useState(0);
   const [coupons, setCoupons] = useState([]);
@@ -58,9 +58,19 @@ const Cart = () => {
                     <h2 className="cart-item-name">{item.nome}</h2>
                     <p className="cart-item-price">R$ {Number(item.preco).toFixed(2)}</p>
                     
-                    {/* Exibir o tamanho selecionado */}
+                    {/* Exibir o tamanho selecionado e permitir alteração */}
                     {item.selectedSize && (
-                      <p className="cart-item-size">Tamanho: {item.selectedSize}</p>
+                      <div className="cart-item-size">
+                        <label>Tamanho:</label>
+                        <select
+                          value={item.selectedSize}
+                          onChange={(e) => updateSize(item.id, e.target.value)}
+                        >
+                          {['P', 'M', 'G', 'GG'].map(size => (
+                            <option key={size} value={size}>{size}</option>
+                          ))}
+                        </select>
+                      </div>
                     )}
                     
                     <div className="quantity-controls">

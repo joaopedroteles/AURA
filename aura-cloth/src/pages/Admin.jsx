@@ -17,11 +17,11 @@ const Admin = () => {
   const [newBanner, setNewBanner] = useState({ nome: '', image_path: '', location: '' // "home", "about", "pagproduto", etc.
 });
 
-  const [orders, setOrders] = useState([]);
+  //const [orders, setOrders] = useState([]);
   const [bannerFile, setBannerFile] = useState(null);
   const [availableImages, setAvailableImages] = useState([]);
-  const [editingOrder, setEditingOrder] = useState(null);
-  const [newStatus, setNewStatus] = useState('')
+  //const [editingOrder, setEditingOrder] = useState(null);
+  //const [newStatus, setNewStatus] = useState('')
 
 /********************************************************************************************* */
 
@@ -48,7 +48,7 @@ const Admin = () => {
     }
   };
   
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get('http://localhost:5000/api/orders');
@@ -70,7 +70,7 @@ const Admin = () => {
     } catch (error) {
       console.error('Erro ao atualizar status do pedido:', error);
     }
-  };
+  };*/
 
   //prepara edição
   const startEditPost = (post) => {
@@ -307,48 +307,9 @@ const handleSaveEdit = async () => {
         <div className="admin-section">
           
         <h1>Administração de Pedidos</h1>
-      <table className="orders-table">
-        <thead>
-          <tr>
-            <th>ID do Pedido</th>
-            <th>Usuário</th>
-            <th>Total</th>
-            <th>Status</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          {orders.map((order) => (
-            <tr key={order.id}>
-              <td>{order.id}</td>
-              <td>{order.user_id}</td>
-              <td>R$ {order.total}</td>
-              <td>
-                {editingOrder === order.id ? (
-                  <input
-                    type="text"
-                    value={newStatus}
-                    onChange={(e) => setNewStatus(e.target.value)}
-                  />
-                ) : (
-                  order.status
-                )}
-              </td>
-              <td>
-                {editingOrder === order.id ? (
-                  <button onClick={() => handleUpdateStatus(order.id)}>Salvar</button>
-                ) : (
-                  <button onClick={() => setEditingOrder(order.id)}>Editar</button>
-                )}
-                {editingOrder === order.id && (
-                  <button onClick={() => setEditingOrder(null)}>Cancelar</button>
-                )}
-                 <button onClick={() => navigate(`/admin/orders/${order.id}`)}>Ver Detalhes</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+        <button onClick={() => navigate('/admin/orders/:id')}>
+            Ver Detalhes dos Pedidos
+          </button>
         </div>
       </div>
 

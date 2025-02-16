@@ -207,6 +207,8 @@ app.post('/api/orders', async (req, res) => {
   }
 });
 
+// rotas dos pedidos 2
+
 // Rota para listar todos os pedidos
 app.get('/api/orders', async (req, res) => {
   try {
@@ -233,17 +235,34 @@ app.put('/api/orders/:id/status', async (req, res) => {
 });
 
 // Rota para buscar um pedido específico pelo ID
+// Rota para buscar um pedido específico pelo ID
 app.get('/api/orders/:id', async (req, res) => {
+  const { id } = req.params;
   try {
-    const order = await Order.findByPk(req.params.id, {
-      include: [{
-        model: OrderItem,
-        include: [Product] // Inclui os produtos relacionados
-      }]
-    });
-    
-    if (!order) return res.status(404).json({ error: 'Pedido não encontrado' });
-    res.json(order);
+    const orderId = parseInt(id, 10); // Certifique-se de que o ID é um número inteiro
+    if (isNaN(orderId)) {
+      return res.status(400).json({ error: 'ID inválido' });
+    }
+
+    // Busca o pedido no banco de dados pelo ID
+    const orderResult = await pool.query('SELECT * FROM orders WHERE id = $1', [orderId]);
+    if (orderResult.rows.length === 0) {
+      return res.status(404).json({ error: 'Pedido não encontrado' });
+    }
+    const order = orderResult.rows[0];
+
+    // Busca os itens do pedido
+    const itemsResult = await pool.query('SELECT * FROM order_items WHERE order_id = $1', [orderId]);
+    const items = itemsResult.rows;
+
+    // Inclui os produtos relacionados
+    for (const item of items) {
+      const productResult = await pool.query('SELECT * FROM produtos WHERE id = $1', [item.product_id]);
+      item.product = productResult.rows[0];
+    }
+
+    // Retorna o pedido com os itens
+    res.json({ ...order, items });
   } catch (error) {
     console.error('Erro ao buscar pedido:', error);
     res.status(500).json({ error: 'Erro ao buscar pedido' });

@@ -161,7 +161,7 @@ const Home = () => {
               <li><Link to="/Promos">Promos</Link></li>
               <li><Link to="/Lancamentos">Lançamentos</Link></li>
               <li><Link to="/Geek">Geek</Link></li>
-              <li><Link to="/Universidade">Universidades</Link></li>
+              <li><Link to="/Universidade">University</Link></li>
               <li><Link to="/alternativos">Alternativos</Link></li>
               <li><Link to="/fit">Fit</Link></li>
             </ul>

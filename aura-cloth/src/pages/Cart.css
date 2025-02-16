@@ -167,6 +167,14 @@ button:hover {
   cursor: pointer;
 }
 
+/* Cart.css */
+.cart-item-size select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+}
+
 .remove-button:hover {
   background-color: #cc0000;
 }
